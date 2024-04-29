@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - StreamFlix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>StreamFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+    <section class="hero">
+        <h2>Bienvenue sur notre site, <span id="username"></span>!</h2>
+        <p>Nous vous souhaitons une excellente expérience de streaming.</p>
+                <p>Découvrez notre vaste sélection de films et séries en streaming.</p>
+        <a href="films.html" class="btn">Voir les films</a>
+        <a href="series.html" class="btn">Voir les séries</a>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 StreamFlix. Tous droits réservés.</p>
+    </footer>
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var username = urlParams.get('username');
+        document.getElementById("username").textContent = username;
+    </script>
+</body>
+</html>
+

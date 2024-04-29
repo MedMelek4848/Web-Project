@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Film - StreamFlix</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1>StreamFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                 <li><a href="login.html">Login</a></li>
+                 <li><a href="register.html">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="movie-details">
+        <h2 id="movie-title">Nom du Film</h2>
+        <div class="video-container">
+            <video controls id="movie-video">
+            </video>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 StreamFlix. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+         const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+
+        const movies = [
+            { id: 1, title: "The First Omen", videoUrl: "figures/The First Omen.mp4" },
+            { id: 2, title: "A Quiet Place", videoUrl: "figures/A Quiet Place.mp4" },  
+            { id: 3, title: "Borderlands", videoUrl: "figures/Borderlands.mp4" }
+
+        ];
+
+        const movie = movies.find(movie => movie.id === parseInt(movieId));
+
+        if (movie) {
+            document.getElementById('movie-title').textContent = movie.title;
+            document.getElementById('movie-video').src = movie.videoUrl;
+        }
+    </script>
+</body>
+</html>

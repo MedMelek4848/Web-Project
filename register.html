@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - StreamFlix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>StreamFlix</h1>
+    </header>
+
+    <section class="register">
+        <h2>Inscription</h2>
+        <form id="registerForm">
+            <div>
+                <label for="username">Nom d'utilisateur:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label>Choisissez votre type d'abonnement :</label>
+                <table>
+                    <tr>
+                        <td><input type="radio" id="basic" name="subscription" value="basic"></td>
+                        <td><label for="basic">Basique</label></td>
+                        <td>10€ par mois</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="standard" name="subscription" value="standard"></td>
+                        <td><label for="standard">Standard</label></td>
+                        <td>15€ par mois</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="premium" name="subscription" value="premium"></td>
+                        <td><label for="premium">Premium</label></td>
+                        <td>20€ par mois</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="submit">S'inscrire</button>
+        </form>
+        <p>Déjà un compte? <a href="login.html">Connectez-vous</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 StreamFlix. Tous droits réservés.</p>
+    </footer>
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            window.location.href = "login.html";
+        }
+
+        document.getElementById("registerForm").addEventListener("submit", registerUser);
+    </script>
+</body>
+</html>

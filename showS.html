@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Séries- StreamFlix</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <h1>StreamFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
+	<section class="serie-details">
+        <h2 id="serie-title">Nom du serie</h2>
+        <div class="video-container">
+            <video controls id="serie-video">
+            </video>
+        </div>
+    </section>
+	<footer>
+        <p>&copy; 2024 Mon Site StreamFlix. Tous droits réservés.</p>
+    </footer>
+		<script>
+		  const urlParams = new URLSearchParams(window.location.search);
+        const serieId = urlParams.get('id');
+
+        const series = [
+            { id: 11, title: "imaginary", videoUrl: "figures/imaginary.mp4" },
+            { id: 12, title: "babylon", videoUrl: "figures/babylon.mp4" },    
+            { id: 13, title: "breaking bad", videoUrl: "figures/breaking_bad.mp4" }
+
+        ];
+
+        const serie = series.find(serie => serie.id === parseInt(serieId));
+
+        if (serie) {
+            document.getElementById('serie-title').textContent = serie.title;
+            document.getElementById('serie-video').src = serie.videoUrl;
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - StreamFlix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>StreamFlix</h1>
+    </header>
+
+    <section class="login">
+        <h2>Connexion</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Nom d'utilisateur:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Se connecter</button>
+        </form>
+        <p>Pas encore de compte? <a href="register.html">Inscrivez-vous</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 StreamFlix. Tous droits réservés.</p>
+    </footer>
+    <script>
+        function loginUser(event) {
+            event.preventDefault();
+            var enteredUsername = document.getElementById("username").value;
+            var enteredPassword = document.getElementById("password").value;
+            var storedUsername = localStorage.getItem("username");
+            var storedPassword = localStorage.getItem("password");
+
+
+
+            if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
+
+                window.location.href = "index.html?username=" + enteredUsername;
+            } else {
+                alert("Nom d'utilisateur ou mot de passe incorrect.");
+            }
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", loginUser);
+    </script>
+</body>
+</html>
