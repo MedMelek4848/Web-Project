@@ -26,6 +26,8 @@
             <video controls id="serie-video">
             </video>
         </div>
+        <h1 id="serie-description">description</h1>
+
     </section>
 	<footer>
         <p>&copy; 2024 Mon Site StreamFlix. Tous droits réservés.</p>
@@ -35,9 +37,9 @@
         const serieId = urlParams.get('id');
 
         const series = [
-            { id: 11, title: "imaginary", videoUrl: "figures/imaginary.mp4" },
-            { id: 12, title: "babylon", videoUrl: "figures/babylon.mp4" },    
-            { id: 13, title: "breaking bad", videoUrl: "figures/breaking_bad.mp4" }
+            { id: 11, title: "imaginary", videoUrl: "figures/imaginary.mp4" ,description:"Imaginary is the story of Sam, a man in his mid-twenties trying to survive the struggles of life, love, work, and his imaginary friend, Mannie."},
+            { id: 12, title: "babylon", videoUrl: "figures/babylon.mp4",description:"Babylon est une série télévisée britannique créée par Danny Boyle, Robert Jones, Jesse Armstrong et Sam Bain composée d'un pilote de 90 minutes diffusé le 9 février 2014, puis six épisodes de 60 minutes diffusés du 13 novembre au 18 décembre 2014 sur Channel 4. Elle a aussi été diffusée à partir du 8 janvier 2015 sur SundanceTV aux États-Unis1." },    
+            { id: 13, title: "breaking bad", videoUrl: "figures/breaking_bad.mp4",description:"This article is about the TV series. For other uses, see Breaking Bad. Breaking Bad is an American crime drama television series created and produced by Vince Gilligan. Set and filmed in Albuquerque, New Mexico, the series follows Walter White (Bryan Cranston), an underpaid, overqualified, and dispirited high-school chemistry teacher who is struggling with a recent diagnosis of stage-three lung cancer." }
 
         ];
 
@@ -46,6 +48,8 @@
         if (serie) {
             document.getElementById('serie-title').textContent = serie.title;
             document.getElementById('serie-video').src = serie.videoUrl;
+            document.getElementById('serie-description').textContent = serie.description;
+
         }
         </script>
 </body>

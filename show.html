@@ -27,6 +27,8 @@
             <video controls id="movie-video">
             </video>
         </div>
+        <h1 id="movie-description">Description</h1>
+
     </section>
 
     <footer>
@@ -38,9 +40,9 @@
         const movieId = urlParams.get('id');
 
         const movies = [
-            { id: 1, title: "The First Omen", videoUrl: "figures/The First Omen.mp4" },
-            { id: 2, title: "A Quiet Place", videoUrl: "figures/A Quiet Place.mp4" },  
-            { id: 3, title: "Borderlands", videoUrl: "figures/Borderlands.mp4" }
+            { id: 1, title: "The First Omen", videoUrl: "figures/The First Omen.mp4",description:"Une jeune Américaine est envoyée à Rome pour commencer une vie au service de l'Église, mais elle est confrontée à des ténèbres qui l'amènent à remettre sa foi en question et à découvrir une terrifiante conspiration." },
+            { id: 2, title: "A Quiet Place", videoUrl: "figures/A Quiet Place.mp4",description:"John Krasinski’s “A Quiet Place” is a nerve-shredder. It’s a movie designed to make you an active participant in a game of tension, not just a passive observer in an unfolding horror. Most of the great horror movies are so because we become actively invested in the fate of the characters and involved in the cinematic exercise playing out before us. It is a tight thrill ride—the kind of movie that quickens the heart rate and plays with the expectations of the audience, while never treating them like idiots. In other words, it’s a really good horror movie." },  
+            { id: 3, title: "Borderlands", videoUrl: "figures/Borderlands.mp4",description:"Borderlands is a 2009 action role-playing first-person shooter video game developed by Gearbox Software and published by 2K. It is the first game in the Borderlands series. The game was released worldwide in October 2009 for the PlayStation 3, Xbox 360 and Microsoft Windows,[1] with a Mac OS X version being released on December 3, 2010 by Feral Interactive.[5] The game's story focuses on a group of four, who travel to the distant planet of Pandora to search for the , which is rumored to contain advanced alien technology and other priceless riches. The hunters piece together clues to find the Vault while battling the savage wildlife of Pandora, local bandits that populate the planet, and ultimately banding together to prevent the Atlas Corporation and its privately funded paramilitary forces from reaching the Vault first." }
 
         ];
 
@@ -49,6 +51,8 @@
         if (movie) {
             document.getElementById('movie-title').textContent = movie.title;
             document.getElementById('movie-video').src = movie.videoUrl;
+            document.getElementById('movie-description').textContent = movie.description;
+
         }
     </script>
 </body>
